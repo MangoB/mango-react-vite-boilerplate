@@ -1,17 +1,26 @@
 import { useState } from 'react'
-import Button from '@mui/material/Button';
+import { useTranslation } from "react-i18next";
+import {
+  Button,
+  Typography,
+} from '@mui/material';
 
 import reactLogo from './assets/react.svg'
 import muiLogo from '/mui.svg'
 import viteLogo from '/vite.svg'
+
+import NavBar from "./components/NavBar";
+
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const { t } = useTranslation();
 
   return (
     <>
-      <div>
+      <NavBar />
+      <div className="logo-box">
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo vite" alt="Vite logo" />
         </a>
@@ -22,7 +31,12 @@ function App() {
           <img src={muiLogo} className="logo mui" alt="MUI logo" />
         </a>
       </div>
-      <h1>Vite + React + MUI</h1>
+      <Typography variant="h2">
+        {t("Welcome")}
+      </Typography>
+      <Typography variant="h3" gutterBottom>
+        Vite + React + MUI
+      </Typography>
       <div className="card">
         <Button 
           variant="outlined"
@@ -35,7 +49,7 @@ function App() {
         </p>
       </div>
       <p className="read-the-docs">
-        Click on the Vite, React and MUI logos to learn more
+        {t("Read the docs")}
       </p>
     </>
   )
