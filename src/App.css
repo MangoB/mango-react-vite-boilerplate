@@ -11,11 +11,14 @@
   will-change: filter;
   transition: filter 300ms;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.logo.vite:hover {
+  filter: drop-shadow(0 0 2em #8664ffaa);
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+.logo.mui:hover {
+  filter: drop-shadow(0 0 2em #6166fbaa);
 }
 
 @keyframes logo-spin {
